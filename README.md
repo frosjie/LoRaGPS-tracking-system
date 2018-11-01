@@ -1,3 +1,3 @@
 # LoRaGPS-tracking-system
 
-Greeting... I'm new to GitHub!
+This is part of my final year project
