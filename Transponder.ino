@@ -2,13 +2,11 @@
 #include <TinyGPS++.h>
 #include <SPI.h> 
 #include <RH_RF95.h> 
-#include <LiquidCrystal.h> 
 
 float frequency = 868.0; 
 TinyGPSPlus gps;
 SoftwareSerial ss(3, 4); 
 RH_RF95 rf95; 
-//LiquidCrystal lcd(19,18,17,16,15,14); 
 
 char databuf[100]; 
 uint8_t dataoutgoing[100]; 
@@ -45,12 +43,6 @@ void setup()
      
     // Setup Coding Rate:5(4/5),6(4/6),7(4/7),8(4/8)  
     rf95.setCodingRate4(5); 
-    
-    //lcd.begin(16,2); 
-    //lcd.home(); 
-    //lcd.print("WelcomeTraxx2018"); 
-    //delay(1000); 
-    //lcd.clear();
 } 
  
 void loop() 
@@ -95,25 +87,9 @@ void loop()
     
     // Now wait for a reply 
     check_server_response();
-    delay(400);
-
-    //lcd.setCursor(0,0); 
-    //lcd.print("LAT:"); 
-    //lcd.setCursor(5,0); 
-    //lcd.print(flat); 
-    //lcd.setCursor(0,1); 
-    //lcd.print("LON:"); 
-    //lcd.setCursor(5,1); 
-    //lcd.print(flon); 
-    //delay(3000); 
-    //lcd.clear();     
+    delay(400);  
   }
-  
   Serial.println("\n");
-  //lcd.setCursor(0,0); 
-  //lcd.print("Serching GPS..."); 
-  //delay(1000); 
-  //lcd.clear();  
 }  
 
 void print_gps_information()
